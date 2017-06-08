@@ -1,0 +1,6 @@
+rootProject.name = 'monitor'
+
+include 'connect', 'connect_test'
+include 'execute_jdbc', 'execute_script', 'execute_ssh'
+include 'notice_email', 'notice_phone'
+include 'service:disk_space'
