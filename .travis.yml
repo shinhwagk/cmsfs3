@@ -3,11 +3,10 @@ language: java
 jdk:
   - oraclejdk8
 
-services:
-  - mysql
-
 before_install:
   - mysql -V
 
 script:
-  - ./gradlew :connect:test
+#  - ./gradlew :connect:test
+  - cat /etc/issue
+  - echo a
