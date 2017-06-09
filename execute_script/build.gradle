@@ -1,7 +1,7 @@
 group 'org.cmsfs'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'scala'
+apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
@@ -9,17 +9,7 @@ repositories {
     mavenCentral()
 }
 
-sourceSets {
-    test {
-        scala {
-            srcDirs = ['src/test/scala']
-        }
-    }
-}
-
 dependencies {
-    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.2'
-
     compile group: 'commons-io', name: 'commons-io', version: '2.5'
     compile group: 'com.typesafe.play', name: 'play-json_2.12', version: '2.6.0-RC2'
 

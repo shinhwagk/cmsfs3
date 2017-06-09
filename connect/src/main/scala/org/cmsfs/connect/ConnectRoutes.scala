@@ -1,11 +1,12 @@
 package org.cmsfs.connect
 
 import akka.http.scaladsl.model.StatusCodes._
-import akka.http.scaladsl.server.Directives.{as, complete, entity, get, onComplete, path, pathPrefix, _}
+import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 
 import scala.util.{Failure, Success}
-object ConnectRoutes extends ConnectQuery {
+
+object ConnectRoutes extends ConnectQuery with ConnectJson {
   val route: Route =
     pathPrefix("v1" / "connect") {
       get {
@@ -27,7 +28,7 @@ object ConnectRoutes extends ConnectQuery {
       } ~ pathPrefix("mysql" / Segment) { groupName =>
         onComplete(getGroupJdbcMysqlByName(groupName)) {
           case Success(names) => complete(names)
-          case Failure(ex) => complete((InternalServerError, "That wasn't valid! " ))
+          case Failure(ex) => complete((InternalServerError, "That wasn't valid! "))
         }
       }
     }

@@ -24,14 +24,17 @@ public class ScriptExecute {
     final Optional<String> dataOpt;
     final Optional<String> argsOpt;
 
-
-    ScriptExecute(List<String> files, Map<String, String> env, Optional<String> dataOpt, Optional<String> argsOpt) {
+    public ScriptExecute(List<String> files, Map<String, String> env, Optional<String> dataOpt, Optional<String> argsOpt) {
         this.workNumber = ThreadLocalRandom.current().nextLong(100000000);
         this.workFolder = currentPath + "/" + workspace + "/" + workNumber;
         this.files = files;
         this.env = env;
         this.dataOpt = dataOpt;
         this.argsOpt = argsOpt;
+    }
+
+    public ScriptExecute(List<String> files, Map<String, String> env) {
+        this(files, env, Optional.empty(), Optional.empty());
     }
 
     void writeFile(String content, String file) {
@@ -84,7 +87,12 @@ public class ScriptExecute {
             lines.add(line);
         }
         r.close();
-        return String.join("\n", lines);
+
+        try {
+            return String.join("\n", lines);
+        } finally {
+            FileUtils.forceDeleteOnExit(new File(this.workFolder));
+        }
     }
 
     void createWorkDir() throws IOException {

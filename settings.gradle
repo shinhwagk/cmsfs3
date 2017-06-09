@@ -1,6 +1,7 @@
-rootProject.name = 'monitor'
+rootProject.name = 'org.monitor'
 
 include 'connect', 'connect_test'
 include 'execute_jdbc', 'execute_script', 'execute_ssh'
 include 'notice_email', 'notice_phone'
-include 'service:disk_space'
+include 'services:disk_space'
+include 'test:kafka-server'

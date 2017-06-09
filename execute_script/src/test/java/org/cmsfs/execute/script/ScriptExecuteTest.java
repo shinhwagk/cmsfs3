@@ -1,8 +1,11 @@
 package org.cmsfs.execute.script;
 
+import org.apache.commons.io.FileUtils;
+import org.junit.After;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Optional;
@@ -25,6 +28,10 @@ public class ScriptExecuteTest {
         }
         ScriptExecute se = new ScriptExecute(Arrays.asList(file.getAbsolutePath()), new HashMap<>(), Optional.empty(), Optional.empty());
         assertEquals("test", se.executeScript());
+    }
 
+    @After
+    public void clear() throws IOException {
+        FileUtils.forceDeleteOnExit(new File("workspace"));
     }
 }
