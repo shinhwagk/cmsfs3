@@ -3,5 +3,5 @@ language: java
 jdk:
   - oraclejdk8
 
-org.cmsfs.execute.script:
-  - echo "a"
+script:
+  - ./gradlew test
