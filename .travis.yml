@@ -7,6 +7,4 @@ before_install:
   - cat /etc/issue
 
 script:
-#  - ./gradlew :connect:test
-  - cat /etc/issue
-  - echo a
+  - ./gradlew jar
