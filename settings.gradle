@@ -1,7 +1,16 @@
-rootProject.name = 'org.monitor'
+rootProject.name = 'org.cmsfs'
 
-include 'connect', 'connect_test'
-include 'execute_jdbc', 'execute_script', 'execute_ssh'
-include 'notice_email', 'notice_phone'
-include 'services:disk_space'
+// api
+include 'api_connect', 'api_config', 'api_execute_ssh', 'api_execute_jdbc'
+
+// lib
+include 'lib_execute_script'
+
+// service
+include 'service_notice_email', 'service_notice_phone', 'service_connect_check'
+
+// monitor
+include 'monitors:disk_space'
+
+// test
 include 'test:kafka-server'
