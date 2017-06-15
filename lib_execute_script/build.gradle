@@ -10,8 +10,8 @@ repositories {
 }
 
 dependencies {
-    compile group: 'commons-io', name: 'commons-io', version: '2.5'
-    compile group: 'com.typesafe.play', name: 'play-json_2.12', version: '2.6.0-RC2'
+    compile rootProject.ext.dependencies["play-json"]
+    compile rootProject.ext.dependencies["common-io"]
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile rootProject.ext.dependencies["junit"]
 }

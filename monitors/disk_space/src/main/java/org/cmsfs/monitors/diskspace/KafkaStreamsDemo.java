@@ -11,7 +11,6 @@ import org.cmsfs.kafka.serializer.JsonDeserializer;
 import org.cmsfs.kafka.serializer.JsonSerializer;
 import org.cmsfs.monitors.diskspace.processes.ProcessAlarmPhone;
 import org.cmsfs.monitors.diskspace.processes.ProcessAlarmPhoneConfig;
-import org.cmsfs.monitors.diskspace.processes.ProcessAlarmPhoneConfigDeserializer;
 import org.cmsfs.monitors.diskspace.processes.ProcessCollect;
 
 import java.util.Properties;

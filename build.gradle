@@ -4,3 +4,15 @@ version '1.0-SNAPSHOT'
 task wrapper(type: Wrapper) {
     gradleVersion = '3.5'
 }
+
+ext {
+    kafkaVersion = '0.10.2.1'
+    dependencies = [
+            "kafka-streams": "org.apache.kafka:kafka-streams:${kafkaVersion}",
+            "kafka-clients": "org.apache.kafka:kafka-clients:${kafkaVersion}",
+            "gson"         : 'com.google.code.gson:gson:2.8.1',
+            "junit"        : 'junit:junit:4.12',
+            "play-json"    : 'com.typesafe.play:play-json_2.12:2.6.0-RC2',
+            "common-io"    : 'commons-io:commons-io:2.5'
+    ]
+}
