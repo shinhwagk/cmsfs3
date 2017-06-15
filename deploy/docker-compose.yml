@@ -3,21 +3,27 @@ version: '2.1'
 services:
   kafka-server:
     image: kafka-server
+    container_name: kafka-server
     volumes:
       - /etc/localtime:/etc/localtime
+    ports:
+      - "9092:9092"
     networks:
       cmsfs:
         aliases:
           - kafka-server.cmsfs.org
   zookeeper-server:
     image: zookeeper-server
+    container_name: zookeeper-server
     volumes:
       - /etc/localtime:/etc/localtime
     networks:
       cmsfs:
         aliases:
           - zookeeper-server.cmsfs.org
+    ports:
+      - "2181:2181"
 
-network:
+networks:
   cmsfs:
     driver: bridge
