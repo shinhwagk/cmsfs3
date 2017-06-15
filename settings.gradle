@@ -1,10 +1,10 @@
 rootProject.name = 'org.cmsfs'
 
 // api
-include 'api_connect', 'api_config', 'api_execute_ssh', 'api_execute_jdbc'
+include 'api_connect', 'api_execute_ssh', 'api_execute_jdbc'
 
 // lib
-include 'lib_execute_script'
+include 'lib_execute_script', 'lib_config_api','lib_kafka_serializer'
 
 // service
 include 'service_notice_email', 'service_notice_phone', 'service_connect_check'

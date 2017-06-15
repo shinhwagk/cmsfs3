@@ -4,7 +4,7 @@ public class ProcessAlarmPhoneConfig {
     String server;
     Config[] configs;
 
-    class Config {
+    public class Config {
         String[] phones;
         int threshold;
     }

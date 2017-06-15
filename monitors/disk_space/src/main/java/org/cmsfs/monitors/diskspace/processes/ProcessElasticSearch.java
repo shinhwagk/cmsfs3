@@ -18,7 +18,7 @@ public class ProcessElasticSearch implements Processor<String, String> {
     private KeyValueStore<String, Optional<String>> kvStore;
 
     private List<String> files = new ArrayList(Arrays.asList("format.py", "main_alarm_phone.py"));
-    private Gson gson;
+    private Gson gson = new Gson();
 
     @Override
     public void init(ProcessorContext context) {

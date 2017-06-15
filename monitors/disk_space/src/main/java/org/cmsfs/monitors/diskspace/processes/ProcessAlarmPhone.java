@@ -18,13 +18,13 @@ public class ProcessAlarmPhone implements Processor<String, String> {
     private KeyValueStore<String, Optional<ProcessAlarmPhoneConfig.Config[]>> kvStore;
 
     private List<String> files = new ArrayList(Arrays.asList("format.py", "main_alarm_phone.py"));
-    private Gson gson;
+    private Gson gson = new Gson();
 
     @Override
     public void init(ProcessorContext context) {
         this.context = context;
         this.context.schedule(60000);
-        this.kvStore = (KeyValueStore<String, Optional<ProcessAlarmPhoneConfig.Config[]>>) context.getStateStore("Counts");
+        this.kvStore = (KeyValueStore<String, Optional<ProcessAlarmPhoneConfig.Config[]>>) context.getStateStore("ProcessAlarmPhone");
     }
 
     @Override

@@ -9,6 +9,7 @@ import org.cmsfs.execute.script.ScriptExecute;
 import java.io.IOException;
 import java.util.Optional;
 
+
 public class ProcessCollect implements Processor<String, String> {
     private ProcessorContext context;
     private String file = "collect.sh";
