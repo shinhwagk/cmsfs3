@@ -1,9 +1,9 @@
 {
   "name": "cmsfs",
   "version": "1.0.0",
-  "main": "lib/main.js",
+  "main": "src/main.js",
   "scripts": {
-    "start": "lib/node main.js"
+    "start": "node src/main.js"
   },
   "dependencies": {
     "kafka-node": "1.6.2"
