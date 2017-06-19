@@ -6,4 +6,8 @@ object ConnectTable {
 
   case class ConnectSsh(name: String, port: Int, user: String, password: Option[String], privateKey: Option[String])
 
+  case class ConnectGroupJdbc(name: String, members: List[List[String]])
+
+  case class ConnectGroupSsh(name: String, members: List[String])
+
 }

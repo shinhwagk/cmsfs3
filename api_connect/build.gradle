@@ -2,7 +2,12 @@ group 'org.cmsfs.api.connect'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'scala'
+apply plugin: 'application'
+
+mainClassName = "org.cmsfs.connect.ConnectBootstrap"
+
 repositories { mavenCentral() }
+
 dependencies {
     compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.2'
     compile group: 'com.typesafe.akka', name: 'akka-http_2.12', version: '10.0.7'
@@ -10,4 +15,5 @@ dependencies {
     compile group: 'com.typesafe.slick', name: 'slick_2.12', version: '3.2.0'
 
 }
+
 sourceSets.main.scala.srcDirs = ['src/main/scala']

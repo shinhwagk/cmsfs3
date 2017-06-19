@@ -16,3 +16,15 @@ ext {
             "common-io"    : 'commons-io:commons-io:2.5'
     ]
 }
+
+// Closure cl = { task -> println "I'm $task.project.name" }
+
+// project(':lib_kafka_serializer') {
+//     task('hello').doLast(cl)
+// }
+
+task hello {
+    doLast {
+        println "hello"
+    }
+}
