@@ -8,12 +8,22 @@ task wrapper(type: Wrapper) {
 ext {
     kafkaVersion = '0.10.2.1'
     dependencies = [
-            "kafka-streams": "org.apache.kafka:kafka-streams:${kafkaVersion}",
-            "kafka-clients": "org.apache.kafka:kafka-clients:${kafkaVersion}",
-            "gson"         : 'com.google.code.gson:gson:2.8.1',
-            "junit"        : 'junit:junit:4.12',
-            "play-json"    : 'com.typesafe.play:play-json_2.12:2.6.0-RC2',
-            "common-io"    : 'commons-io:commons-io:2.5'
+            "kafka-streams"    : "org.apache.kafka:kafka-streams:${kafkaVersion}",
+            "kafka-clients"    : "org.apache.kafka:kafka-clients:${kafkaVersion}",
+            "gson"             : 'com.google.code.gson:gson:2.8.1',
+            "junit"            : 'junit:junit:4.12',
+            "play-json"        : 'com.typesafe.play:play-json_2.12:2.6.0-RC2',
+            "common-io"        : 'commons-io:commons-io:2.5',
+            // https://mvnrepository.com/artifact/com.typesafe.akka/akka-stream_2.11
+            "akka-stream"      : 'com.typesafe.akka:akka-stream_2.12:2.5.3',
+            // https://mvnrepository.com/artifact/com.typesafe.akka/akka-stream-kafka_2.12
+            "akka-stream-kafka": 'com.typesafe.akka:akka-stream-kafka_2.12:0.16',
+            "scala-library"    : 'org.scala-lang:scala-library:2.12.2',
+            "mysql"            : 'mysql:mysql-connector-java:6.0.6',
+            "http-client"      : 'org.apache.httpcomponents:httpclient:4.5.3',
+            // https://mvnrepository.com/artifact/org.quartz-scheduler/quartz
+            "quartz"           : 'org.quartz-scheduler:quartz:2.3.0'
+
     ]
 }
 

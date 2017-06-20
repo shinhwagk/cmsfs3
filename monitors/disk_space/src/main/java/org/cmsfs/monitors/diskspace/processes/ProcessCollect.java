@@ -3,11 +3,7 @@ package org.cmsfs.monitors.diskspace.processes;
 import com.google.gson.Gson;
 import org.apache.kafka.streams.processor.Processor;
 import org.apache.kafka.streams.processor.ProcessorContext;
-import org.cmsfs.config.monitor.CmsfsHttpClient;
 import org.cmsfs.execute.script.ScriptExecute;
-
-import java.io.IOException;
-import java.util.Optional;
 
 
 public class ProcessCollect implements Processor<String, String> {
@@ -23,7 +19,7 @@ public class ProcessCollect implements Processor<String, String> {
     @Override
     public void process(String server, String value) {
 //        try {
-////            String args = CmsfsHttpClient.getMonitorConfig("diskSpace", "p_np", server);
+////            String args = ConfigApi.getMonitorConfig("diskSpace", "p_np", server);
 //
 ////            String[] argsArr = gson.fromJson(argsStr, String[].class);
 //

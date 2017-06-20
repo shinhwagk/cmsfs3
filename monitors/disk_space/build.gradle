@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     compile project(':lib_execute_script')
-    compile project(':lib_config_api')
+    compile project(':lib_api_config')
     compile project(':lib_kafka_serializer')
 
     compile rootProject.ext.dependencies["kafka-streams"]

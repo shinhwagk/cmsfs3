@@ -1,7 +1,7 @@
-group 'org.cmsfs'
+group 'org.cmsfs.lib.execute.script'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
+apply plugin: 'scala'
 
 sourceCompatibility = 1.8
 
@@ -10,8 +10,8 @@ repositories {
 }
 
 dependencies {
-    compile rootProject.ext.dependencies["play-json"]
+    compile rootProject.ext.dependencies["scala-library"]
     compile rootProject.ext.dependencies["common-io"]
-
-    testCompile rootProject.ext.dependencies["junit"]
+    compile project(":lib_execute_script")
+    compile rootProject.ext.dependencies["play-json"]
 }

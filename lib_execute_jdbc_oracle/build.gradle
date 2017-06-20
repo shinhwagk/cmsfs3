@@ -1,0 +1,19 @@
+group 'org.cmsfs.lib.execute.jdbc.oracle'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'scala'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'jars'
+    }
+}
+
+dependencies {
+    compile name: 'ojdbc8'
+    compile rootProject.ext.dependencies["scala-library"]
+}

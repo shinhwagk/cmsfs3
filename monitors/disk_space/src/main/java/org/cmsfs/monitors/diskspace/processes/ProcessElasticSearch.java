@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import org.apache.kafka.streams.processor.Processor;
 import org.apache.kafka.streams.processor.ProcessorContext;
 import org.apache.kafka.streams.state.KeyValueStore;
-import org.cmsfs.config.monitor.CmsfsHttpClient;
+import org.cmsfs.lib.api.config.ConfigApi;
 import org.cmsfs.execute.script.ScriptExecute;
 
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class ProcessElasticSearch implements Processor<String, String> {
     @Override
     public void punctuate(long timestamp) {
         try {
-            String args = CmsfsHttpClient.getMonitorConfig("diskSpace", "p_es");
+            String args = ConfigApi.getMonitorConfig("diskSpace", "p_es");
             for (String arg : gson.fromJson(args, String[].class)) {
 
 

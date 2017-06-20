@@ -1,0 +1,16 @@
+group 'org.cmsfs.lib.api.config'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile rootProject.ext.dependencies["scala-library"]
+    compile rootProject.ext.dependencies["http-client"]
+    testCompile rootProject.ext.dependencies["junit"]
+}

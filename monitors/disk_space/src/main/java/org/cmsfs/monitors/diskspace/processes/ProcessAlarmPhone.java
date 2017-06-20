@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import org.apache.kafka.streams.processor.Processor;
 import org.apache.kafka.streams.processor.ProcessorContext;
 import org.apache.kafka.streams.state.KeyValueStore;
-import org.cmsfs.config.monitor.CmsfsHttpClient;
+import org.cmsfs.lib.api.config.ConfigApi;
 import org.cmsfs.execute.script.ScriptExecute;
 
 import java.io.IOException;
@@ -45,7 +45,7 @@ public class ProcessAlarmPhone implements Processor<String, String> {
     @Override
     public void punctuate(long timestamp) {
         try {
-            String args = CmsfsHttpClient.getMonitorConfig("diskSpace", "p_np");
+            String args = ConfigApi.getMonitorConfig("diskSpace", "p_np");
             for (ProcessAlarmPhoneConfig papc : this.gson.fromJson(args, ProcessAlarmPhoneConfig[].class)) {
                 this.kvStore.put(papc.server, Optional.of(papc.configs));
             }
