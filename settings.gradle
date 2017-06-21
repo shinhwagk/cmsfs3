@@ -1,16 +1,17 @@
 rootProject.name = 'org.cmsfs'
 
 // api
-include 'api_execute_ssh', 'api_execute_jdbc'
+include 'api_execute_ssh', 'api_execute_jdbc', 'api_error'
 
 // lib
 include 'lib_execute_script', 'lib_api_config', 'lib_kafka_serializer', 'lib_execute_jdbc_oracle', 'lib_execute_jdbc_mysql', 'lib_api_connect'
+include 'lib_execute_ssh'
 
 // service
 include 'service_notice_email', 'service_notice_phone', 'service_connect_check'
 
 // monitor
-include 'monitors:disk_space', 'monitors:tablespaceSpace'
+include 'monitors:disk_space', 'monitors:tablespaceSpace', 'monitors:sessionNumber'
 
 // test
 include 'test:kafka-server'

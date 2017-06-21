@@ -1,2 +1,1 @@
-const boot = require("lib/app")
-boot.koa.listen(3000);
+require("./lib/app").koa.listen(3000);

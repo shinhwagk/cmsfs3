@@ -19,6 +19,7 @@ dependencies {
     compile project(":lib_execute_jdbc_oracle")
     compile project(":lib_api_config")
     compile project(":lib_api_connect")
+    compile project(":lib_execute_ssh")
     compile rootProject.ext.dependencies["akka-stream"]
     compile rootProject.ext.dependencies["akka-stream-kafka"]
     compile rootProject.ext.dependencies["play-json"]

@@ -19,18 +19,23 @@ function genOrderNo() {
 
 function genFormBody(phones, content) {
   return {
-    appId: "TOC", orderNo: genOrderNo, protocol: 'S',
+    appId: "TOC", orderNo: genOrderNo(), protocol: 'S',
     targetCount: phones.length, targetIdenty: phones.join(";"), content: content, isRealTime: 'true'
   }
 }
 
 function consumerMessageEvent(message) {
-  const msg = JSON.parse(message.value)
-  const form = genFormBody(msg.phones, msg.content)
-  console.info(JSON.stringify(form))
-  request.post('http://10.65.209.12:8380/mns-web/services/rest/msgNotify', { form: form }, (err, httpResponse, body) => {
-    if (err) { console.error(err) } else { console.info(body) }
-  })
+  try {
+    const msg = JSON.parse(message.value)
+    const form = genFormBody(msg.phones, msg.content)
+    console.info(form)
+    console.info(JSON.stringify(form))
+    request.post('http://10.65.209.12:8380/mns-web/services/rest/msgNotify', { form: form }, (err, httpResponse, body) => {
+      if (err) { console.error(err) } else { console.info(body) }
+    })
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 consumer.on('message', consumerMessageEvent);

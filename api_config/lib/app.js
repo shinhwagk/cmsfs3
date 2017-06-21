@@ -9,4 +9,4 @@ koaRouter
     .get("/v1/monitor/:monitor/config/:process", appViaQuery_1.qConfig)
     .get("/v1/monitor/:monitor/server", appViaQuery_1.qServer);
 exports.koa.use(koaRouter.routes()).use(koaRouter.allowedMethods());
-exports.koa.listen(3000);
+// koa.listen(3000); 
