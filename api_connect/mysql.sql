@@ -12,7 +12,6 @@ CREATE TABLE IF NOT EXISTS `connect_jdbc` (
   PRIMARY KEY (`name`))
 ENGINE = InnoDB;
 
-
 CREATE TABLE IF NOT EXISTS `connect_ssh` (
   `name` INT NOT NULL,
   `ip` VARCHAR(45) NOT NULL,
