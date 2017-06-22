@@ -16,8 +16,8 @@ RUN npm i @types/node@"^7.0.31"
 ADD tsconfig.json .
 ADD index.js .
 
-ADD src .
+ADD src src
 
-RUN tsc .
+RUN tsc
 
 CMD node index.js

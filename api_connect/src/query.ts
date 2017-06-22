@@ -1,7 +1,7 @@
 const mysql = require('mysql2/promise');
 
 const connection = mysql.createConnection({
-  host: '10.65.193.100',
+  host: 'mysql.cmsfs.org',
   user: 'root',
   password: '123456aA+',
   database: 'cmsfs'
