@@ -4,12 +4,11 @@ RUN mkdir /opt/cmsfs
 
 WORKDIR /opt/cmsfs
 
-ADD gulpfile.js .
 ADD package.json .
 ADD tsconfig.json .
 ADD index.js .
 
-RUN npm i && npm run gulp
+RUN npm i && npm run tsc
 
 ADD src .
 
