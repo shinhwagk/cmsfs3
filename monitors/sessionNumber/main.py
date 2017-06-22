@@ -10,21 +10,21 @@ while True:
     for server in json.loads(mhttp.getServers()):
         print("start:", server["name"])
         try:
-          conn = json.loads(mhttp.getServerConnection(server["name"]))
-          dbConn = mdb.createDbConn(conn["ip"], str(conn["port"]), conn["service"], conn["user"], conn["password"])
-          dbCr = dbConn.cursor()
-          dbCr.execute(mdb.monitorSql)
-          for username, count in dbCr:
-              content = {
-                  "username": username,
-                  "count": count,
-                  "@metric": "sessionNumber",
-                  "@dbalias": server["name"],
-                  "@timestamp": timestamp
-              }
-              api_es.sendElasticsearch("monitor", "oracle", content)
-          dbCr.close()
-          dbConn.close()
+            conn = json.loads(mhttp.getServerConnection(server["name"]))
+            dbConn = mdb.createDbConn(conn["ip"], str(conn["port"]), conn["service"], conn["user"], conn["password"])
+            dbCr = dbConn.cursor()
+            dbCr.execute(mdb.monitorSql)
+            for username, count in dbCr:
+                content = {
+                    "username": username,
+                    "count": count,
+                    "@metric": "sessionNumber",
+                    "@dbalias": server["name"],
+                    "@timestamp": timestamp
+                }
+                api_es.sendElasticsearch("monitor", "oracle", content)
+            dbCr.close()
+            dbConn.close()
         except Exception as inst:
-          mhttp.sendError(str(inst))
+            mhttp.sendError(str(inst))
     time.sleep(60)
