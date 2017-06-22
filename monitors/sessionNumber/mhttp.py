@@ -8,7 +8,7 @@ def httpGetClient(hostname,port,url):
   conn.close()
   return data
 
-def getServer():
+def getServers():
   try:
     return httpGetClient("config.cmsfs.org", 3000, "/v1/monitor/sessionNumber/server")
   except:
@@ -25,6 +25,7 @@ def sendError(error):
     conn.request("POST", url, content, headers)
     response = conn.getresponse()
     print(response.status, response.reason)
+    conn.close()
 
 if __name__ == "__main__":
   print(getServer())

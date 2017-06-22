@@ -7,10 +7,10 @@ from datetime import datetime
 
 while True:
     timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
-    for i in json.loads(mhttp.getServer()):
-        servers = json.loads(mhttp.getServerConnection(i["name"]))
+    for servers in json.loads(mhttp.getServers()):
         if (len(servers) >= 1):
           try:
+            conn = json.loads(mhttp.getServerConnection(server["name"]))
             dbConn = mdb.createDbConn(conn["ip"], str(conn["port"]), conn["service"], conn["user"], conn["password"])
             dbCr = dbConn.cursor()
             dbCr.execute(mdb.monitorSql)
@@ -19,7 +19,7 @@ while True:
                     "username": username,
                     "count": count,
                     "@metric": "sessionNumber",
-                    "@dbalias": i["name"],
+                    "@dbalias": server["name"],
                     "@timestamp": timestamp
                 }
                 api_es.sendElasticsearch("monitor", "oracle", content)
