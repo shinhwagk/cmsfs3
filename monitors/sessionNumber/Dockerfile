@@ -1,4 +1,4 @@
-FROM python:3
+FROM python-oracle:12.2
 
 RUN mkdir /opt/cmsfs
 WORKDIR /opt/cmsfs
