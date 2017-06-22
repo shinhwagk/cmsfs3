@@ -8,4 +8,4 @@ ADD main.py .
 ADD mdb.py .
 ADD mhttp.py .
 
-CMD python main.py
+CMD python -u main.py
