@@ -15,7 +15,7 @@ def getServer():
     return '[]'
 
 def getServerConnection(server):
-  return httpGetClient("server.cmsfs.org", 3001, "/v1/connect/jdbc/oracle/%s" % (server))
+  return httpGetClient("connect.cmsfs.org", 3000, "/v1/connect/jdbc/oracle/%s" % (server))
 
 def sendError(error):
     headers = {"Content-type": "application/json; charset=utf-8"}
