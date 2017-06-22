@@ -8,6 +8,7 @@ from datetime import datetime
 while True:
     timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
     for server in json.loads(mhttp.getServers()):
+        print("start:", server["name"])
         try:
           conn = json.loads(mhttp.getServerConnection(server["name"]))
           dbConn = mdb.createDbConn(conn["ip"], str(conn["port"]), conn["service"], conn["user"], conn["password"])
