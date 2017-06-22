@@ -19,7 +19,7 @@ def getServerConnection(server):
 
 def sendError(error):
     headers = {"Content-type": "application/json; charset=utf-8"}
-    conn = http.client.HTTPConnection("error.cmsfs.org", 3003)
+    conn = http.client.HTTPConnection("error.cmsfs.org", 3000)
     url = "/v1/error/sessionNumber"
     content = json.dumps({"error": error})
     conn.request("POST", url, content, headers)
