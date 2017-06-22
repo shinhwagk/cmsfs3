@@ -3,7 +3,7 @@ import * as KoaRouter from 'koa-router';
 
 import { qJdbcServer } from './appViaQuery'
 
-const koa = new Koa();
+export const koa = new Koa();
 const koaRouter = new KoaRouter();
 
 koaRouter
@@ -11,4 +11,4 @@ koaRouter
   //.get("/v1/connect/ssh/:name", )
 
 koa.use(koaRouter.routes()).use(koaRouter.allowedMethods());
-koa.listen(3001);
+//koa.listen(3001);
