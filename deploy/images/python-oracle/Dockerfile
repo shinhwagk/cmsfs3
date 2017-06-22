@@ -1,7 +1,7 @@
 FROM python:3
 
 RUN apt update
-RUN apt install libaio
+RUN apt install -y libaio1
 
 ADD instantclient /usr/lib/instantclient
 
