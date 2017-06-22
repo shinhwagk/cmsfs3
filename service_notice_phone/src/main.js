@@ -11,10 +11,12 @@ const consumer = new kafka.HighLevelConsumer(client, topics, options);
 
 function genOrderNo() {
   const date = new Date()
-  const orderNo = [date.getFullYear(), date.getMonth(), date.getDate(),
-  date.getHours(), date.getMinutes(), date.getSeconds(),
-  date.getMilliseconds(), date.getTime()].join("")
-  return Number(orderNo)
+  const orderNo = date.getTime()
+//  [date.getFullYear(), date.getMonth(), date.getDate(),
+//  date.getHours(), date.getMinutes(), date.getSeconds(),
+//  date.getMilliseconds(), date.getTime()].join("")
+//  return Number(orderNo)
+  return orderNo
 }
 
 function genFormBody(phones, content) {
@@ -30,6 +32,7 @@ function consumerMessageEvent(message) {
     const form = genFormBody(msg.phones, msg.content)
     console.info(form)
     console.info(JSON.stringify(form))
+    console.info(form.orderNo)
     request.post('http://10.65.209.12:8380/mns-web/services/rest/msgNotify', { form: form }, (err, httpResponse, body) => {
       if (err) { console.error(err) } else { console.info(body) }
     })

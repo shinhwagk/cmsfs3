@@ -1,0 +1,6 @@
+{
+  "ip": "10.65.193.100",
+  "docker": {
+    "buildDir": "/tmp/docker/build"
+  }
+}
