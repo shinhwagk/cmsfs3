@@ -1,10 +1,10 @@
 const mysql = require('mysql2/promise');
 
 const connection = mysql.createConnection({
-  host: '10.65.103.75',
+  host: 'mysql.cmsfs.org',
   user: 'root',
   password: '123456aA+',
-  database: 'cmsfs3'
+  database: 'cmsfs'
 });
 
 export async function queryServer(tab: string) {
