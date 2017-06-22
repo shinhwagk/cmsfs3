@@ -1,5 +1,8 @@
 FROM python:3
 
+RUN apt update
+RUN apt install libaio
+
 ADD instantclient /usr/lib/instantclient
 
 RUN cd /usr/lib/instantclient && ln -s libclntsh.so.12.1 libclntsh.so
