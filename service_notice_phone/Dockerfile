@@ -9,4 +9,4 @@ RUN npm i request@"^2.81.0"
 
 ADD src src
 
-CMD node src/index.js
+CMD node src/main.js
