@@ -6,7 +6,8 @@ import api_es
 from datetime import datetime
 
 while True:
-    timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+    timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    print("start monitor: ", timestamp)
     for server in json.loads(mhttp.getServers()):
         print("start:", server["name"])
         try:

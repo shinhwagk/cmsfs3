@@ -1,0 +1,17 @@
+group 'org.cmsfs.monitors.cpuLoad'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'scala'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile rootProject.ext.dependencies["scala-library"]
+    compile project(':lib_execute_ssh``')
+    compile rootProject.ext.dependencies["akka-actor"]
+}

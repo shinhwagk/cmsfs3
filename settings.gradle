@@ -11,7 +11,7 @@ include 'lib_execute_ssh'
 include 'service_notice_email', 'service_notice_phone', 'service_connect_check'
 
 // monitor
-include 'monitors:disk_space', 'monitors:tablespaceSpace', 'monitors:sessionNumber'
+include 'monitors:disk_space', 'monitors:tablespaceSpace', 'monitors:sessionNumber', 'monitors:cpuLoad'
 
 // test
 include 'test:kafka-server'
