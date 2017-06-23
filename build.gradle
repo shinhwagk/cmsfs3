@@ -12,7 +12,7 @@ ext {
             "kafka-clients"    : "org.apache.kafka:kafka-clients:${kafkaVersion}",
             "gson"             : 'com.google.code.gson:gson:2.8.1',
             "junit"            : 'junit:junit:4.12',
-            "play-json"        : 'com.typesafe.play:play-json_2.12:2.6.0-RC2',
+            "play-json"        : 'com.typesafe.play:play-json_2.12:2.6.0',
             "common-io"        : 'commons-io:commons-io:2.5',
             "akka-actor"       : 'com.typesafe.akka:akka-actor_2.12:2.5.3',
             "akka-stream"      : 'com.typesafe.akka:akka-stream_2.12:2.5.3',

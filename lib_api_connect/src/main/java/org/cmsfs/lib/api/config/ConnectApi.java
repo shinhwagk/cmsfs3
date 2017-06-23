@@ -10,22 +10,22 @@ import java.io.IOException;
 
 public class ConnectApi {
     public static String getConnectsByGroup(String group) throws IOException {
-        String url = String.format("http://connect.cmsfs.com/v1/connect/group/jdbc/oracle/:name", group);
+        String url = String.format("http://connect.cmsfs.org:3000/v1/connect/group/jdbc/oracle/:name", group);
         return httpClient(url);
     }
 
     public static String getOracleConnectByName(String name) throws IOException {
-        String url = String.format("http://conf.cmsfs.com/v1/connect/jdbc/oracle/%s ", name);
+        String url = String.format("http://connect.cmsfs.org:3000/v1/connect/jdbc/oracle/%s", name);
         return httpClient(url);
     }
 
     public static String getMysqlConnectByName(String name) throws IOException {
-        String url = String.format("http://conf.cmsfs.com/v1/connect/jdbc/mysql/%s ", name);
+        String url = String.format("http://connect.cmsfs.org:3000/v1/connect/jdbc/mysql/%s", name);
         return httpClient(url);
     }
 
     public static String getSshConnectByName(String name) throws IOException {
-        String url = String.format("http://conf.cmsfs.com/v1/connect/ssh/%s ", name);
+        String url = String.format("http://connect.cmsfs.org:3000/v1/connect/ssh/%s", name);
         return httpClient(url);
     }
 
