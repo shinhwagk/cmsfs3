@@ -17,7 +17,7 @@ object Boot extends App {
   implicit val materializer = ActorMaterializer()
 
   val boot = Source.tick(0.seconds, 1.seconds, ())
-    .map(_ => ConfigApi.getCronServersByMonitor("tablespaceSpace"))
+    .map(_ => ConfigApi.getServersByMonitor("tablespaceSpace"))
     .mapConcat(Json.parse(_).as[List[Server]])
     .filter(server => new CronExpression(server.cron).isSatisfiedBy(new Date()))
 

@@ -24,6 +24,11 @@ public class ConnectApi {
         return httpClient(url);
     }
 
+    public static String getSshConnectByName(String name) throws IOException {
+        String url = String.format("http://conf.cmsfs.com/v1/connect/ssh/%s ", name);
+        return httpClient(url);
+    }
+
     private static String httpClient(String url) throws IOException {
         HttpGet httpGet = new HttpGet(url);
         CloseableHttpClient httpClient = HttpClients.createDefault();

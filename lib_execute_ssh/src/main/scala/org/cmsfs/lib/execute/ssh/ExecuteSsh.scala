@@ -7,7 +7,7 @@ import com.jcraft.jsch.{ChannelExec, JSch}
 import scala.collection.mutable.ArrayBuffer
 
 object ExecuteSsh {
-  def ssh(keyPath: String, user: String, host: String, scriptUrl: String, port: Int, command: String): String = {
+  def ssh(keyPath: String, host: String, port: Int, user: String, password: Option[String], command: String): Option[String] = {
     val jsch = new JSch();
     jsch.addIdentity(keyPath);
     val session = jsch.getSession(user, host, port);

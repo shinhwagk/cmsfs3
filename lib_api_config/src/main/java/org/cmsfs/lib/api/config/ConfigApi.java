@@ -10,22 +10,22 @@ import java.io.IOException;
 
 public class ConfigApi {
     public static String getConfig(String monitor, String process) throws IOException {
-        String url = String.format("http://conf.cmsfs.com/v1/config/%s/%s", monitor, process);
+        String url = String.format("http://config.cmsfs.org:3000/v1/config/%s/%s", monitor, process);
         return httpClient(url);
     }
 
-    public static String getCronServersByMonitor(String monitor) throws IOException {
-        String url = String.format("http://conf.cmsfs.com/v1/servers/%s", monitor);
+    public static String getServersByMonitor(String monitor) throws IOException {
+        String url = String.format("http://config.cmsfs.org:3000/v1/monitor/%s/server", monitor);
         return httpClient(url);
     }
 
     public static String getProcessConfigByMonitorAndProcess(String monitor, String process) throws IOException {
-        String url = String.format("http://conf.cmsfs.com/v1/monitor/%s/config/%s", monitor, process);
+        String url = String.format("http://config.cmsfs.org:3000/v1/monitor/%s/config/%s", monitor, process);
         return httpClient(url);
     }
 
     public static String getCronSshServersByMonitor(String monitor) throws IOException {
-        String url = String.format("http://conf.cmsfs.com/v1/servers/ssh/%s", monitor);
+        String url = String.format("http://config.cmsfs.org:3000/v1/servers/ssh/%s", monitor);
         return httpClient(url);
     }
 

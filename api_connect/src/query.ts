@@ -7,8 +7,14 @@ const connection = mysql.createConnection({
   database: 'cmsfs'
 });
 
-export async function queryJdbcServer(kind: string,name:string) {
+export async function queryJdbcServer(kind: string, name: string) {
   const conn = await connection;
-  const [rows, fields] = await conn.execute("SELECT * FROM connect_jdbc where kind = ? AND name = ?",[kind,name]);
+  const [rows, fields] = await conn.execute("SELECT * FROM connect_jdbc WHERE kind = ? AND name = ?", [kind, name]);
+  return rows[0]
+}
+
+export async function querySshServer(name: String) {
+  const conn = await connection;
+  const [rows, fields] = await conn.execute("SELECT * FROM connect_ssh WHERE name = ?", [name]);
   return rows[0]
 }
