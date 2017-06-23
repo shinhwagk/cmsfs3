@@ -3,6 +3,7 @@ package org.cmsfs.lib.execute.ssh
 import java.io.{BufferedReader, InputStreamReader}
 
 import com.jcraft.jsch.{ChannelExec, JSch}
+import play.api.libs.json.Json
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -34,10 +35,10 @@ object ExecuteSsh {
 
     try {
       if (exitStatus == 0 || exitStatus == -1) {
-        Json.toJson(rs).toString()
+        Some(Json.toJson(rs).toString())
       } else {
-        val err = getAAA(channelExec.getErrStream())
-        throw new Exception(s"ssh ${scriptUrl} error, host:${host}, err: ${err}. data ${Json.toJson(rs).toString()}")
+        println(s"ssh error, host:${host},  data ${Json.toJson(rs).toString()}")
+        None
       }
     } finally {
       channelExec.disconnect();

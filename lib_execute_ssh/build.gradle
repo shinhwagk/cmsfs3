@@ -11,5 +11,6 @@ repositories {
 
 dependencies {
     compile rootProject.ext.dependencies["scala-library"]
+    compile rootProject.ext.dependencies["play-json"]
     compile rootProject.ext.dependencies["jsch"]
 }

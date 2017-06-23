@@ -2,6 +2,9 @@ group 'org.cmsfs.monitors.cpuLoad'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'scala'
+apply plugin: 'application'
+
+mainClassName = 'Monitor'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
