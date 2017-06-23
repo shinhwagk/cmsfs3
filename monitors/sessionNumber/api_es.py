@@ -8,3 +8,4 @@ def sendElasticsearch(_index, _type, content):
       conn.request("POST", url, json.dumps(content), headers)
       response = conn.getresponse()
       print(response.status, response.reason)
+      conn.close()
