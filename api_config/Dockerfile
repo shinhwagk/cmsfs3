@@ -7,7 +7,8 @@ WORKDIR /opt/cmsfs
 ADD index.js .
 
 ADD package.json .
-CMD npm i
+
+RUN npm i
 
 CMD node index.js
 
