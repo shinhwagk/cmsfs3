@@ -4,9 +4,10 @@ RUN mkdir /opt/cmsfs
 
 WORKDIR /opt/cmsfs
 
-RUN npm i kafka-node@"^1.6.2"
-RUN npm i request@"^2.81.0"
+ADD package.json .
 
-ADD src src
+RUN npm i
 
 CMD node src/main.js
+
+ADD src src

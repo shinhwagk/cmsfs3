@@ -1,4 +1,4 @@
-rootProject.name = 'org.cmsfs'
+rootProject.name = 'cmsfs'
 
 // api
 include 'api_execute_ssh', 'api_execute_jdbc', 'api_error', 'api_config', 'api_connect'
@@ -15,3 +15,35 @@ include 'monitors:disk_space', 'monitors:tablespaceSpace', 'monitors:sessionNumb
 
 // test
 include 'test:kafka-server'
+
+ext {
+    kafkaVersion = '0.10.2.1'
+    dependencies = [
+            "kafka-streams"    : "org.apache.kafka:kafka-streams:${kafkaVersion}",
+            "kafka-clients"    : "org.apache.kafka:kafka-clients:${kafkaVersion}",
+            "gson"             : 'com.google.code.gson:gson:2.8.1',
+            "junit"            : 'junit:junit:4.12',
+            "play-json"        : 'com.typesafe.play:play-json_2.12:2.6.0',
+            "common-io"        : 'commons-io:commons-io:2.5',
+            "akka-actor"       : 'com.typesafe.akka:akka-actor_2.12:2.5.3',
+            "akka-stream"      : 'com.typesafe.akka:akka-stream_2.12:2.5.3',
+            "akka-stream-kafka": 'com.typesafe.akka:akka-stream-kafka_2.12:0.16',
+            "scala-library"    : 'org.scala-lang:scala-library:2.12.2',
+            "mysql"            : 'mysql:mysql-connector-java:6.0.6',
+            "http-client"      : 'org.apache.httpcomponents:httpclient:4.5.3',
+            "quartz"           : 'org.quartz-scheduler:quartz:2.3.0',
+            "jsch"             : 'com.jcraft:jsch:0.1.54'
+    ]
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
+    }
+}
