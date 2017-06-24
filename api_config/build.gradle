@@ -1,0 +1,9 @@
+group 'org.cmsfs.api.config'
+
+apply plugin: 'com.moowork.node'
+
+
+task helloWorld( type: NodeTask ) {
+    println("Aa")
+}
+
