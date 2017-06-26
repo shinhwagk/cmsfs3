@@ -1,3 +1,5 @@
+//apply from: '../gradle/node.gradle'
+
 buildscript {
     repositories {
         maven {
@@ -10,4 +12,4 @@ buildscript {
     }
 }
 
-apply plugin: com.moowork.gradle.node.NodePlugin
+apply plugin: 'com.moowork.node'

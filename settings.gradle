@@ -8,7 +8,7 @@ include 'lib_execute_script', 'lib_api_config', 'lib_kafka_serializer', 'lib_exe
 include 'lib_execute_ssh'
 
 // service
-include 'service_notice_email', 'service_notice_phone', 'service_connect_check'
+include 'service_notice_email', 'service_notice_phone', 'service_connect_check', 'service_execute_command'
 
 // monitor
 include 'monitors:disk_space', 'monitors:tablespaceSpace', 'monitors:sessionNumber', 'monitors:cpuLoad'
@@ -16,8 +16,9 @@ include 'monitors:disk_space', 'monitors:tablespaceSpace', 'monitors:sessionNumb
 // test
 include 'test:kafka-server'
 
-ext {
+gradle.ext {
     kafkaVersion = '0.10.2.1'
+    akkaVersion = '2.5.3'
     dependencies = [
             "kafka-streams"    : "org.apache.kafka:kafka-streams:${kafkaVersion}",
             "kafka-clients"    : "org.apache.kafka:kafka-clients:${kafkaVersion}",
@@ -25,8 +26,8 @@ ext {
             "junit"            : 'junit:junit:4.12',
             "play-json"        : 'com.typesafe.play:play-json_2.12:2.6.0',
             "common-io"        : 'commons-io:commons-io:2.5',
-            "akka-actor"       : 'com.typesafe.akka:akka-actor_2.12:2.5.3',
-            "akka-stream"      : 'com.typesafe.akka:akka-stream_2.12:2.5.3',
+            "akka-actor"       : "com.typesafe.akka:akka-actor_2.12:${akkaVersion}",
+            "akka-stream"      : "com.typesafe.akka:akka-stream_2.12:${akkaVersion}",
             "akka-stream-kafka": 'com.typesafe.akka:akka-stream-kafka_2.12:0.16',
             "scala-library"    : 'org.scala-lang:scala-library:2.12.2',
             "mysql"            : 'mysql:mysql-connector-java:6.0.6',

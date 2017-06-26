@@ -10,8 +10,8 @@ repositories {
 }
 
 dependencies {
-    compile rootProject.ext.dependencies["scala-library"]
-    compile rootProject.ext.dependencies["common-io"]
+    compile gradle.ext.dependencies["scala-library"]
+    compile gradle.ext.dependencies["common-io"]
     compile project(":lib_execute_script")
-    compile rootProject.ext.dependencies["play-json"]
+    compile gradle.ext.dependencies["play-json"]
 }

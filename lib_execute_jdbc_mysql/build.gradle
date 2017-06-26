@@ -14,6 +14,6 @@ repositories {
 }
 
 dependencies {
-    compile rootProject.ext.dependencies["scala-library"]
-    compile rootProject.ext.dependencies["mysql"]
+    compile gradle.ext.dependencies["scala-library"]
+    compile gradle.ext.dependencies["mysql"]
 }

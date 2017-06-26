@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    compile rootProject.ext.dependencies["kafka-clients"]
-    compile rootProject.ext.dependencies["gson"]
-    testCompile rootProject.ext.dependencies["junit"]
+    compile gradle.ext.dependencies["kafka-clients"]
+    compile gradle.ext.dependencies["gson"]
+    testCompile gradle.ext.dependencies["junit"]
 }

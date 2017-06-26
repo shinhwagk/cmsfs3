@@ -16,9 +16,9 @@ dependencies {
     compile project(':lib_api_config')
     compile project(':lib_kafka_serializer')
 
-    compile rootProject.ext.dependencies["kafka-streams"]
-    compile rootProject.ext.dependencies["gson"]
+    compile gradle.ext.dependencies["kafka-streams"]
+    compile gradle.ext.dependencies["gson"]
 
     testCompile project(':test:kafka-server')
-    testCompile rootProject.ext.dependencies["junit"]
+    testCompile gradle.ext.dependencies["junit"]
 }

@@ -15,5 +15,5 @@ repositories {
 
 dependencies {
     compile name: 'ojdbc8'
-    compile rootProject.ext.dependencies["scala-library"]
+    compile gradle.ext.dependencies["scala-library"]
 }

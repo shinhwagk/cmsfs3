@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    compile rootProject.ext.dependencies["scala-library"]
-    compile rootProject.ext.dependencies["http-client"]
-    testCompile rootProject.ext.dependencies["junit"]
+    compile gradle.ext.dependencies["scala-library"]
+    compile gradle.ext.dependencies["http-client"]
+    testCompile gradle.ext.dependencies["junit"]
 }

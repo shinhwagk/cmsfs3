@@ -14,10 +14,10 @@ repositories {
 }
 
 dependencies {
-    compile rootProject.ext.dependencies["scala-library"]
-    compile rootProject.ext.dependencies["play-json"]
+    compile gradle.ext.dependencies["scala-library"]
+    compile gradle.ext.dependencies["play-json"]
     compile project(':lib_execute_ssh')
     compile project(':lib_api_config')
     compile project(':lib_api_connect')
-    compile rootProject.ext.dependencies["akka-actor"]
+    compile gradle.ext.dependencies["akka-actor"]
 }

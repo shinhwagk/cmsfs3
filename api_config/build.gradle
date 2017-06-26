@@ -1,1 +1,2 @@
-apply from: '../gradle/node.gradle'
+apply from: "${gradle.rootProject.projectDir}/gradle/node.gradle"
+

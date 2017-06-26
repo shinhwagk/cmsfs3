@@ -9,19 +9,19 @@ targetCompatibility = 1.8
 repositories {
     mavenCentral()
     flatDir {
-        dirs "${rootProject.projectDir}/lib_execute_jdbc_oracle/jars"
+        dirs "${gradle.rootProject.projectDir}/lib_execute_jdbc_oracle/jars"
     }
 }
 
 dependencies {
     compile name: 'ojdbc8'
-    compile rootProject.ext.dependencies["scala-library"]
+    compile gradle.ext.dependencies["scala-library"]
     compile project(":lib_execute_jdbc_oracle")
     compile project(":lib_api_config")
     compile project(":lib_api_connect")
     compile project(":lib_execute_ssh")
-    compile rootProject.ext.dependencies["akka-stream"]
-    compile rootProject.ext.dependencies["akka-stream-kafka"]
-    compile rootProject.ext.dependencies["play-json"]
-    compile rootProject.ext.dependencies["quartz"]
+    compile gradle.ext.dependencies["akka-stream"]
+    compile gradle.ext.dependencies["akka-stream-kafka"]
+    compile gradle.ext.dependencies["play-json"]
+    compile gradle.ext.dependencies["quartz"]
 }
