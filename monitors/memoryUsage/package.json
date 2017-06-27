@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "typings": "",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.16.2",
-    "ssh2": "^0.5.5"
+    "lib_api_node_config": "file:..\\..\\lib_api_node_config"
   }
 }

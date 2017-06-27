@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "lib",
+    "declarationDir": "typings",
+    "declaration": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}

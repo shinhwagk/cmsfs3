@@ -19,7 +19,7 @@ exports.executeCommand = function (connect) {
         if (err) { reject(`exec command error: ${err}`); }
         else {
           stream.on('close', function (code, signal) {
-            console.log('Stream :: close :: code: ' + code + ', signal: ' + signal);
+            console.log('Stream :: close :: code: ' + code + ', sig nal: ' + signal);
             conn.end();
           }).on('data', function (data) {
             console.log('STDOUT: ' + data);

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "moduleResolution": "node",
+    // "declarationDir": "./index.d.ts",
+    "outDir": "lib",
+    "strict":true
+  },
+  "files": [
+    "src/test.ts"
+  ]
+}
