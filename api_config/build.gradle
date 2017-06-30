@@ -1,2 +1,0 @@
-apply from: "${gradle.rootProject.projectDir}/gradle/node.gradle"
-

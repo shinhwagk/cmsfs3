@@ -2,15 +2,15 @@
   "name": "lib_api_node_config",
   "description": "",
   "version": "1.0.0",
-  "main": "index.js",
-  "typings": "typings/fff.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "dependencies": {
     "axios": "^0.16.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-flatten": "^0.3.1",
     "gulp-typescript": "^3.1.7",
-    "typescript": "^2.3.4"
+    "merge2": "^1.0.3",
+    "typescript": "^2.4.1"
   }
 }

@@ -1,0 +1,10 @@
+apply plugin: 'com.moowork.node'
+apply plugin: 'com.moowork.gulp'
+
+task helloWorld(type: NodeTask, dependsOn: npmInstall) {
+   println "aaa1"
+   script = file('src/index.js')
+
+}
+
+//task helloWorld2(type: GulpTask) {}

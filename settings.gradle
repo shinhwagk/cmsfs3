@@ -5,13 +5,13 @@ include 'api_execute_ssh', 'api_execute_jdbc', 'api_error', 'api_config', 'api_c
 
 // lib
 include 'lib_execute_script', 'lib_api_config', 'lib_kafka_serializer', 'lib_execute_jdbc_oracle', 'lib_execute_jdbc_mysql', 'lib_api_connect'
-include 'lib_execute_ssh'
+include 'lib_execute_ssh', 'lib_api_node_connect', 'lib_api_node_config'
 
 // service
 include 'service_notice_email', 'service_notice_phone', 'service_connect_check', 'service_execute_command'
 
 // monitor
-include 'monitors:disk_space', 'monitors:tablespaceSpace', 'monitors:sessionNumber', 'monitors:cpuLoad'
+include 'monitors:disk_space', 'monitors:tablespaceSpace', 'monitors:sessionNumber', 'monitors:cpuLoad', 'monitors:memoryUsage'
 
 // test
 include 'test:kafka-server'

@@ -1,0 +1,9 @@
+{
+  "name": "lib_api_node_es",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.16.2"
+  }
+}
